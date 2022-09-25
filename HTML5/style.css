@@ -1,0 +1,724 @@
+/* vase hame element ha */
+*{
+    padding: 0; 
+}
+p{
+color: rgb(255, 210, 217);
+letter-spacing: 2px;
+word-spacing: 10px;
+}
+#div1{
+    width: 100%;
+    height: 200px;
+    background-color: deepskyblue;
+}
+#div2{
+    width: 100%;
+    height: 100px;
+    background-color: crimson;
+}
+.paragraph{
+    color: rgb(54, 4, 136);
+    font-size: 24px;
+    margin: 0;
+}
+
+/* selector madar farzandi */
+div p{
+    color: violet;
+}
+
+/* age = nazari hame title dararo style mide */
+p[title="exa mple"]{
+    color: yellowgreen;
+}
+/* item haee k EXA daran (ye kalame joda)*/
+p[title~="exa"]{
+    font-size: 22px;
+}
+/* p haee ke title daran */
+p[title]{}
+/* p haee k toshon ex hast */
+p[title*="ex"]{}
+/* p title dar haee ke ba e shoro shode */
+p[title^="e"]{}
+/* p title haee ke ba m tamoom shode */
+p[title$="m"]{}
+
+
+/* entekhab dovomin farzand (ke p hast) to harchi (body div ...) */
+/*odd: fard    even: zoj*/
+/* an+b  az b shoro kon va a ta a ta */ 
+p:nth-child(2){
+    color: white;
+}
+p:first-child{}
+
+/* entekhab nohomin farzane p */
+p:nth-of-type(9){
+    color: violet;
+}
+p:first-of-type{}
+
+/* p haee ke tak farzandan */
+p:only-child{
+    color: teal;
+}
+/* tanha farzand on type */
+p:only-of-type{}
+
+/* entekhab hame tag ha bejoz p */
+/* also not .class or #id */
+*:not(p){
+    color: white;
+}
+
+.trd{
+    border-style: solid;
+    border-color: darkblue;
+    border-width: 2px;
+}
+.table{
+    width: 300px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+p::first-letter{}
+p::first-line{}
+
+/* taghir rang select kardan <3 */
+p::selection{
+    color: pink;
+    background-color: purple;
+}
+
+p::before{
+    content: "HI";
+    color: salmon;
+}
+p::after{
+    content: ":)";
+    color: white;
+}
+
+
+/*a & p cool things*/
+a:active{
+    color: teal;
+}
+a:hover{
+    color: yellow;
+}
+a:visited{}
+
+p:hover{
+    color: pink;
+}
+p:active{
+    color: black;
+}
+
+
+input:disabled{
+    background-color: coral;
+}
+input:enabled{
+    background-color: cornflowerblue;
+}
+input:focus{
+    background-color: chartreuse;
+}
+input:required{
+    background-color: crimson;
+}
+
+input:read-only{}
+input:read-write{}
+input:optional{}
+input:valid{}
+input:invalid{}
+input::placeholder{
+    color: royalblue;
+}
+input:checked::before{
+    content: "checked :)";
+}
+
+/* colors : rgb , rgba , HEX , name */
+
+/*display*/
+/* display none for removing elements */
+.span{
+    display: block;
+}
+.dive{
+    display: inline-block;
+    width: 200px;
+}
+.link{
+    display: list-item;
+    width: 100px;
+}
+
+.list{
+    /*type ham az HTML mishe ham az CSS*/
+    list-style-type: lower-roman;
+    list-style-position: inside;
+    list-style-image: none;
+}
+
+/*min-width & max-width also for height*/
+
+/*little project :) */
+#show p{
+    display: none;
+}
+#show {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(212, 53, 25);
+}
+#show:hover p{
+    display: inline;
+}
+
+body{
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 24%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode:multiply;
+}
+#show{
+    border-width: 2px;
+    border-style: dashed;
+    border-color: black;
+    border-radius: 20px;
+
+    outline: 2px;
+    outline-style: solid;
+    outline-color: cornflowerblue;
+}
+
+#txt{
+    width: 200px;
+    height: auto;
+    background-color: cornflowerblue;
+    padding: 0px 10px;
+    margin: auto;
+
+    text-align: justify;
+    text-decoration: underline red;
+    text-transform: capitalize; 
+    letter-spacing: 0px;
+    direction: ltr;
+    line-height: 25px;
+    font-variant: small-caps;
+    line-height:10px;
+
+    /*ijade to raftegi*/
+    text-indent: 10px;
+}
+#txt p::selection{
+    background-color: initial;
+    color: initial !important;
+}
+#txt p{
+    font-family: blahblah2 , cursive , monospace , fantasy;
+    font-size: 14px;
+    font-weight: 600;
+}
+/*icon haye svg behtare az png*/
+
+/*LOGO project*/
+#ebaycenter{
+    text-align: center;
+}
+#ebaycenter::selection{
+    display: none;
+}
+.ebay{
+    display: inline-block;
+    font-size: 80px;
+    margin-right: -15px;
+    text-align: center;
+    text-shadow: -1px 0 0 rgb(255, 255, 255) , -3px 0 2px rgba(255, 255, 255, 0.534);
+}
+.e{
+    color: rgb(235, 48, 48);
+}
+.e:hover{
+    color: coral;
+}
+.ebay::selection {
+    display: none;
+}
+.b{
+    color: rgb(44, 44, 230);
+}
+.a{
+    color: rgb(211, 211, 1);
+}
+.y{
+    color: rgb(18, 144, 18);
+}
+
+/* shadow box */
+.bax{
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: auto;
+    background-color: plum;
+    box-shadow: inset 2px 4px 3px 0px black;
+}
+/* .bax:before{
+    height: 8px;
+    width: 8px;
+    content: '';
+    position: absolute;
+    background-color: black;
+    transform: rotate(45deg);
+    top: 30px;
+    left: 40px;
+    z-index: 2;
+} */
+
+
+.select{
+    color: black;
+}
+.sms{
+    color: black;
+    font-size: 16px;
+    font-family: cursive;
+}
+
+#kkk{
+    width: 100%;
+    height: 250px;
+    background-color: blueviolet;
+    margin: auto;
+    border-width: 5px;
+    border-style: ridge;
+    border-color: brown;
+    border-radius: 20px;
+    /*OUTline is also exist :) */
+}
+.image{
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+}
+#kkk:hover > .rrr {
+    opacity: 0.5;
+}
+#kkk:hover > .rrr:hover{
+    opacity: 1;
+}
+
+:root{
+    /* entekhab rishe */
+}
+
+/* INHERIT mige k az valedet be ers bebar
+yani az on vardar */
+
+
+#vertical span{
+    vertical-align: 20px;
+    white-space: pre;
+}
+
+.main-table{
+    display: table;
+    margin: 20px auto;
+    width: 80%;
+    height: 100px;
+    text-align: center;
+}
+.row{
+    display: table-row;
+    line-height: 25px;
+}
+.row:nth-child(odd){
+    background-color: rgb(105, 105, 105);
+}
+.row:hover{
+    background-color: blueviolet;
+}
+.value{
+    display: table-cell;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+#legend{
+    text-align: center;
+    padding: 5px;
+}
+
+/* position static */
+/* hame static hastan va top ina nemigiran *
+
+/* relative */
+/* top ina migire vali vabaste be jaygah aslishe */
+
+/* absolute */
+/* az jaryan miyad biron va engar jesm nadare va moalaghe */
+/* va top inash bar asas valed vared mishe */
+
+/* fixed */
+/* be valed kari nadare be view port kar dare */
+/* az jaryan kharej mishe */
+
+/* stiky */
+/* tarkib fixed va relative */
+/* ham scroll mishe ham to jaryane */
+
+
+#over1{
+    width: 300px;
+    height: 300px;
+    background-color: cornflowerblue;
+    position: relative;
+    overflow: auto;
+    /* overflow x va y darim */
+}
+#over2{
+    width: 400px;
+    background-color: crimson;
+    position: absolute;
+    top: 30px;
+}
+
+
+/*FLOAT*/
+/*vase axaye kenare matn*/
+#box{
+    background-color: rebeccapurple;
+    /* vase poshesh kamele float ha */
+    overflow: auto;
+    /* mishod az ye dive khali ba clear both estefade kard */
+}
+#box1{
+    width: 50px;
+    height: 50px;
+    background-color: crimson;
+    float: right;
+}
+#box2{
+    width: 50px;
+    height: 150px;
+    background-color: green;
+    float: right;
+}
+#box3{
+    width: 50px;
+    height: 50px;
+    background-color: dodgerblue;
+    clear: right;
+    /* vase khonsa kardane asare float */
+}
+
+
+/*Z-index*/
+#box11{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(212, 53, 25);
+    opacity: 0.8;
+    position: relative;
+    top: 50px;
+    z-index: 3;
+}
+#box22{
+    width: 200px;
+    height: 200px;
+    background-color: chartreuse;
+    position: relative;
+    top: -100px;
+    left: 50px;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+
+#cursor{
+    width: 200px;
+    height: 200px;
+    background-color: cornflowerblue;
+    cursor: crosshair;
+}
+#invisible{
+    visibility: hidden;
+    /* visibility colapse vase hiden kardane ye row table */
+}
+
+
+/* -webkit-  chrome and safari */
+/* -o- opera */
+/* -moz- firefox */
+/* -ms- the IE */
+
+#borderimage{
+    width: 300px;
+    padding: 20px;
+    border: 10px solid transparent;
+    /*transparent = birang*/
+    border-image-source: url(br.jpg);
+    border-image-slice: 5% 4% 5% 4%;
+    border-image-repeat: stretch;
+}
+
+
+#newbackground{
+    width: 900px;
+    height: 800px;
+    background: url(pic1.jpg) , url(p.jpg) , dodgerblue;
+    background-repeat: no-repeat , no-repeat , no-repeat;
+    background-position: center top , center center , center center;
+    background-size:200px , cover , auto ;
+    border: 20px dashed green;
+
+    background-origin: content-box;
+}
+
+#background2{
+    width: 600px;
+    height: 400px;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: greenyellow;
+    border: 20px dashed black;
+    color: blueviolet;
+    font-weight: bolder;
+
+    background-clip: content-box;
+}
+
+
+#gradient{
+    width: 500px;
+    height: 300px;
+    margin-top: 40px;
+
+    background: repeating-linear-gradient(30deg,red 70%,dodgerblue 80%,yellow 90%);
+    /*-webkit-background: linear-gradient(right,red,dodgerblue);*/
+    /*background: linear-gradient(to right,red,dodgerblue);*/
+}
+#radial{
+    width: 300px;
+    height: 300px;
+    margin-top: 30px;
+
+    background: radial-gradient(farthest-corner circle at 30% 10%, yellow , red);
+    /*background: radial-gradient(circle at top left, yellow , red);*/
+    /*-webkit-background: radial-gradient(30% 10%, circle, yellow , red);*/
+}
+#radial2{
+    width: 300px;
+    height: 300px;
+    margin-top: 30px;
+
+    background: radial-gradient( 90% 50%, yellow 20%, red);
+    /*background: repeating-radial-gradient( 90% 50%, yellow 60%, red 90%);*/
+}
+
+
+#p1{
+    width: 200px;
+    height: 100px;
+    background-color: brown;
+    margin-top: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    /* vase reset khobe  */
+    word-break: keep-all;
+}
+#p2{
+    width: 200px;
+    height: 100px;
+    background-color: dodgerblue;
+    margin-top: 30px;
+
+    word-wrap: break-word;
+}
+
+
+@font-face{
+    font-family: song;
+    src: url(ss.ttf);
+    font-weight: normal;
+}
+#fontface{
+    font-family: song;
+    margin: 10px;
+    font-weight: bold;
+}
+
+
+#transition{
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    margin-top: 10px;
+    position: relative;
+    left: 0px;
+    border: 3px solid black;
+    border-radius: 0%;
+    
+    /*transition-property: left, background-color;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0.2s; */
+    
+    transition: left 1s ease 0.2s, background-color 2s ease 0.1s, border-radius 6s ease;
+    
+}
+#maintr{
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+    background-color: aqua;
+    color: darkblue;
+    font-family: cursive;
+}
+#maintr:hover + #transition{
+    left: 250px;
+    background-color: crimson;
+    border-radius: 100%;
+}
+
+#transform{
+    width: 400px;
+    margin-top: 100px;
+    transition: 1s;
+    filter: brightness(2);
+    
+    /*
+    perspective: 500px;
+    in vase hame ye prespective mizare
+    */
+    
+    transform-origin: left;
+    transform: perspective(1000px) rotateY(60deg);
+    
+
+}
+#transform:hover{
+    transform: rotateY(0deg);
+    filter: brightness(1.2);
+    cursor: zoom-in;
+}
+#transform:active{
+    transform: scale(3) translate(0px);
+}
+
+
+
+@keyframes anime{
+    from{
+        color: deeppink;
+        transform: perspective(600px) rotateY(-90deg);
+        border-color: deeppink;
+    }
+    to{
+        color: pink;
+        transform: perspective(600px) rotateY(90deg);
+        border-color: pink;
+    }
+}
+#animation{
+    text-align: center;
+    font-size: 70px;
+    width: 350px;
+    color: springgreen;
+    border: 8px;
+    border-style: ridge;
+    background-color: black;
+    margin: auto;
+    font-family: fantasy;
+    
+    animation-name: anime;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+
+#filter{
+    width: 400px;
+    filter: blur(4px) brightness(2);
+    transform-origin: left;
+    transition: 1s;
+}
+#filter:hover{
+    filter: blur(0px) brightness(1.2) saturate(1.5);
+    transform: scale(3) ;
+}
+
+#resize{
+    width: 500px;
+    height: 220px;
+    max-height: 500px;
+    max-width: 700px; 
+    display: block;
+    margin-top: 30px;
+    background-color: bisque;
+    background-image: url(re.jpg);
+    background-size: 100% 100%;
+    resize: both;
+    overflow: auto;
+}
+
+#column{
+    column-width: 300px;
+    /*column-count:*/
+    text-align: justify;
+    column-rule: 2px solid deeppink;
+    margin-top: 40px;
+    column-gap: 40px;
+}
+
+
+@media screen and (max-width:768px){
+    body{
+        background-image: url(tuka.jpg)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

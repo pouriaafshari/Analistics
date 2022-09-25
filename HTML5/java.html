@@ -1,0 +1,740 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+
+    <script>
+        //alert("Welcome to Monkey House");
+    </script>
+</head>
+<body>
+    <h2>this loads after script!</h2>
+    <p id="txt"></p>
+
+    <script>
+        document.getElementById('txt').innerText = 'this is from script :)';
+        //document.getElementById('txt').TextContent = 'this is from script :)'; ^^^^^^ INAM HAMONE
+        document.getElementById('txt').innerHTML = '<a href="#">Link</a>';
+        /*document.getElementById('txt').outerHTML = '<h2>heading</h2>'; Jaygozin ba oon ID e*/
+        // OUTER TEXT also exist
+        //document.write('javascript');  kole safe ro pak mikone :(
+        console.log('Hello :)');
+    </script>
+
+    <script>
+        var a = 5;
+        var b = 2 + a;
+        //alert(a + b);
+        //alert(typeof a);
+
+        /* TYPES
+         number
+         string
+         bool ---- true false
+         object --- {} []
+         --- null = nothing
+         undifind --- nothing
+        */
+    </script>
+
+    <p id="result"></p>
+    <p id="r2"></p>
+    <script>
+        var R = document.getElementById('result');
+        var R2 = document.getElementById('r2');
+
+        var x = 4;
+        // % = baghi mande    15 % 3 = 0
+        R.innerText = ++x;
+
+        // x = x +-*/ y ======= x +-*/= y
+
+        // == yani on dota megdar az nazare value barabaran
+        // === yani on dota megdar az nazare value va jens barabaran
+        // na mosavi ha != va !==
+
+        // ? ye amalgar sharti e
+        r2.innerText = (3 > 2) ? "YES" : "NO";
+
+        // &&=and=^ ||=or=v !=not=makus ya naghiz ----- amalgar haye manteghi
+    </script>
+
+    <p id="sum"></p>
+    <script>
+        object summ(m,n) {
+            document.getElementById('summ').innerText = n+m;
+            // return m * n;   in miyad on megdaro hesab mikone . kodet badan migi chekaresh kone
+        }
+
+        summ(4,3);
+    </script>
+
+    <p id="object"></p>
+    <script>
+
+        //ijade ye shey ya object 
+        var person = {
+            //vijegi hash
+            name : 'ali',
+            height : 178,
+            color : 'black',
+
+            // hamechi ba , joda mishe !important
+
+            //karash
+            vijegi : function(){
+                return person.name + this.height + this.color;
+            }
+        };
+
+        var object = document.getElementById('object');
+        object.innerHTML = person.vijegi() ;
+    </script>
+
+    <script>
+
+        var u = 5; // global scope variable
+
+        function fn1(){
+            var z = 9; // local scope variable
+            u = 13; // global scope variablef
+        };
+
+    </script>
+
+
+    <p id="testing"></p>
+    <script>
+        var str = 'this is an example';
+        var testing = document.getElementById('testing');
+
+        //testing.innerText = str.length; // toole reshte
+        //testing.innerText = str.indexOf('is'); // search in str
+        //testing.innerText = str.search('an');
+        //testing.innerText = str.slice(3,10); // az harf 3 ta 10 // also can be negative
+        //testing.innerText = str.substring(3,10); // like search
+        //testing.innerText = str.substr(3,10); // az 3 bia 10 ta badesho
+        //testing.innerText = str.replace('an','heh:)'); // jaygozini
+        //testing.innerText = str.toUpperCase(); // hame ro bozorg mikone // lowercase also exist
+        //testing.innerText = str.concat(' this is an extention'); // ezaf mikone // also can be an str name
+        //testing.innerText = str.trim(); // remove left and right spaces
+        //testing.innerText = str.charAt(2); // character shomare 2
+        //testing.innerText = str.charCodeAt(2); // hamone vali code ASCII ro mide
+
+        var sp = 'a,f,d,s';
+        //var arr = sp.split(','); // joda mikone bar asase , va mindazeshon to ye ARAYE
+        //testing.innerText = arr[2]; // namayeshe araye dovom
+
+        // vasr karacteraye khas to reshte az \ estefade mishe
+    </script>
+
+    <script>
+        Math.PI;
+        Math.pow(2,3); // 2 be tavane 3
+        Math.sin(0);
+        Math.min(3,4,1,7); // kocholo tarino neshon mide // max also exist
+        Math.round(4.34); // gerd mikone
+        Math.ceil(9.2); // gerd be bala
+        Math.floor(4.3); // ghat mikone
+        testing.innerText = Math.floor((Math.random() * 16) + 5); // random beine 0 o 1 e :(
+    </script>
+
+    <script>
+        Date();
+        var d = new Date();
+        d.getDay();
+        d.getSeconds();
+        document.write(d.toDateString());
+        d.setDate(25);
+    </script>
+
+    <br> <br>
+
+    <script>
+        document.write(d.getSeconds());
+        var gg = d.getSeconds();
+        if(gg < 8){
+            document.write('time is lower than 8');
+        }
+        else if(gg > 20){
+            document.write('time is grater than 8');
+        }
+        else{
+            document.write('time is grater than 8');
+        }
+        // hamoone ba switch
+        /*switch(true){
+            case (d.getSeconds() < 8 && d.getSeconds() > 0):
+            document.write('time is lower than 8')
+        }*/
+
+
+        var g = 0;
+
+        switch(g){
+            case 0 :
+            document.write('hello');
+            break;
+
+            case 1 :
+            document.write('goodby');
+            break;
+
+            default : //else
+            document.write('hamoon else khodemone')
+        }
+    </script>
+
+    <br><br>
+
+    <script>
+        //loop loops
+
+        for(var i = 1;i < 15; i++){
+            document.write(i) ;
+        }
+
+        document.write('<br> <br>');
+
+        var obj = {
+            name : 'pooriya' ,
+            lastname : 'afshari' ,
+            age : 18,
+        }
+
+        // vase peymayesh object ha va araye ha
+        for ( o in obj ){
+            document.write(obj[o] + ' - ');
+        }
+
+        document.write('<br> <br>');
+
+        var w = 1;
+
+        while(w < 10){
+            document.write(w);
+            w = w + 1;
+        }
+
+        document.write('<br> <br>');
+
+        var d = 13;
+
+        //inam mese while vali hadeaghal ye bar code ejra mishe
+        do{
+            document.write(d);
+        }while(d < 10);
+
+        document.write('<br> <br>');
+
+        var n = 1;
+        while (true){
+            document.write(n);
+            while(n > 8){ brake; };
+            n++;
+        }
+    </script>
+    <script>
+
+        document.write('<br> <br>');
+
+        for(var con = 1 ; con < 10 ; con++ ) {
+            //in mige age be 4 resid, on dore loop ro bikiyal sho boro badi
+            if ( con == 4 ){  ue; } ;
+            document.write(con + ' - ') ;
+        }
+
+    </script>
+
+    <br><br>
+
+    <script>
+
+        // araye arayeha taarif chand moteghayer
+
+        var users = ['hamid', 'ali', 'reza', 'rose', 'darling'] ;
+        users[0] = 'omid' // alan index 0 mishe omid na hamid
+        users[5] = 'sara' // ye mored ezafe shod
+        //har kodomeshon index daran ke az 0 shoro mishe
+        document.write(users[4]);
+
+        //ye araye mitone shamele harchizi bashe bool num etc.
+        // users[2][3][5]  .... injori khondane ye araye to dar to
+        // users.length ... toole araye
+
+
+
+        //tabdile araye be reshte
+        //users.toString;
+        //users.join('###'); //inam string mikone va ba ### az ham joda mikone
+
+        document.write(' Index : ' + users.indexOf('darling') + '<br>');
+        document.write(users.slice(1 , 5)); //beine 1 ta 5
+
+        document.write('<br>')
+
+        users.push('pooriya'); //ezafe kardane ye meghdar be akhar
+
+        users.pop(); // hazf akharin joz
+
+        var blacklist = [];
+        blacklist.push(users.pop()); //endakhtane akharin joz dar blacklist
+
+        users.shift(); //hazf avalin joz araye
+
+        users.unshift('hasan'); //ezafe be avale araye
+
+        users.splice(1, 2, 'this is new'); // az index 1 , 2 ta ro hazf kard va 'this is new' jaygozin shod
+
+
+
+        var arr1 = [1,2,3,4,5,6];
+
+        arr1.every(function name(params) {   //ba in mitoni ye tabe baraye araye tarif koni , va true o false mide biron
+            //put a function here
+        })
+
+        arr1.filter(function name(params) {
+            //tabe mizari tosh o filter mikone mide biron
+        })
+
+        arr1.map(function name(params) {
+            // inam miyad ye harekati ro kolle araye mizane
+        })
+
+        arr1.sort(); //sort bandi mikone
+        arr1.reverse(); //baraks mikone
+        arr1.sort(function(a,b) {
+            return a-b; // in adadaro moratab mikone bar asase ekhtelafeshon
+        })
+
+
+    </script>
+
+
+    <br><br>
+
+
+    <script>
+
+       // olgoo .... ebarat ba ghaede .... search
+
+       var my_string = 'this hello is me';
+
+       var pattern = /hello/g; // hello to reshte man bashe
+       /* testing */ pattern.test(my_string); // true false mide
+       pattern = /^hello/g; // reshte man ba hello shoro beshe
+       pattern = /hello$/g; // reshte man ba hello tamoom beshe
+       pattern = /^hello+\d/g; // ba hello shoro beshe va badesh adad bashe
+       // \s space bashe badesh \w badesh a-z bashe .... \S space nabashe \D adad nabashe
+       pattern = /\bhello/g; // in kalame to reshte man bashe kollan
+       // h? aya h hast ? ... h+ yek ya chand h bashe .... h* sefr ya chand h bashe ... h{3} exaxtly 3 h bashe
+       pattern = /[g-p]/g; // charecter haye g ta p bashan
+       pattern = /[g7]/g; // yeki az charecter haye g ya 7 bashe  // pattern = /[g-p]+[tr5]/g;
+       pattern = /[^g-p]/g; // g ta p nabashe
+
+       //alert(pattern.test(my_string));
+
+       // charecter haye khas = \$ \@ ...
+
+
+       my_string.match(/hello/g); // mige ke dar kolle reshte begard bara man (hata bade inke peida kardi)
+       my_string.search(/hello/i); // mige horof small o capital mohem nis vasam
+
+       //mini project   EMAIL cheker
+       var regular_Email = /[a-z0-9]+\@+[a-z]+\.+[a-z]/g;
+
+    </script>
+
+
+
+    <script>
+
+
+
+      try {
+        //code mashgook
+
+        var aname = prompt('enter your name : '); //an input from allert
+
+        if (/[^a-z]/.test(aname)) {
+          throw 'this is my custom error :)))'; //make custom errors
+        }
+
+      } catch (e) {
+        //error dad chekaresh kon
+        document.write(e.message + '</br>'); // kolle error ha
+
+        document.write(e); // custom error
+      } finally {
+        //hatman ejra mishe ba error ya na
+      }
+
+
+
+    </script>
+
+
+    <script>
+
+      isNaN('hello'); // NaN -->> not a number
+
+      var ss = 'super rare';
+      ss.constructor; // modele on function ro mige
+
+      var num = '23';
+      Number(num);
+      parseInt(num);
+      parseFloat(num); // vase tabdile reshte be Number
+
+      String(num); // tabdil be string
+      num.toString(2); // reshte mikone bar mabnaye 2
+      num.toFixed(2); // adado mige ba 2 ragham ashar
+      num.toPrecision(3); // kollan 3 ragham dashte bashe adade
+
+    </script>
+
+    <br><br>
+
+    <script>
+
+      // sakhte class
+
+      function kimetsu(){
+        this.name = '';
+        this.lastname = '';
+        this.age = '';
+
+        this.fullname = function(){
+          return this.age + this.name + this.lastname;
+        }
+      }
+
+      var user88 = new kimetsu();
+      user88.name = 'this is user88';
+      document.write(user88.name);
+
+      kimetsu.prototype.hello = 76;  // tarife ye property jadid be name hello be kimetsu
+      user88.hello = 68;
+      document.write(user88.hello);
+
+
+    </script>
+
+<br><br>
+
+    <script>
+
+      // call and apply
+
+      function sum(a,b){
+        document.write(a+b+'<br />');
+      }
+
+      sum.apply(undefined,[2,5]); // ooon undefined vase objectie ke behesh bar migarde
+      sum.call(undefined,2,7);
+      //mesal :
+
+      var example = {
+        name : 'mammad',
+      }
+      var name = 'hosein';
+
+      function print(){
+        document.write(this.name + '<br />');
+      }
+
+      print();
+      print.call(example);
+
+    </script>
+
+    <br><br>
+
+    <script>
+
+      // DOM document object model
+        document.getElementsByClassName('EX')[1]; // in ye araye hast va index mikhad
+        document.getElementsByTagName('h1')[2]; // inam index mikhad
+        document.getElementsByName('username')[1]; // vase input ha ke name darim masalan
+        document.querySelector('#box'); // ba selector css elemento migire
+        document.querySelectorAll('#box')[2]; // hamoone vali index mikhad
+
+
+    </script>
+
+    <br><br>
+
+    <script>
+
+        // set kardane atribute ba JS
+        document.getElementById('id').setAttribute('src','google.com');
+        /* ==== */ document.getElementById('id').src = 'google.com';
+        document.getElementById('id').removeAttribute('src'); //baraks hamoone
+
+        document.getElementById('id').hasAttribute('class'); // true false mide
+
+        document.getElementById('id').style.color = 'blue';
+        document.getElementById('id').style.cssText = 'font-Size:20px ; color:red';
+
+        document.getElementById('id').className += ' newclass'; // ezaf kardane ye class jadid
+        // += in yani ezaf kon .... = in migof jaygozin kon
+        document.getElementById('id').classList.add('class2'); // enam hamoone
+        document.getElementById('id').classList.remove('class2'); // remove kard
+
+        document.getElementById('id').classList.contains('class2');//??? true false
+
+
+    </script>
+
+    <br><br>
+
+    <script>
+
+        document.anchors; // in <a> haro mide ke name daran
+        document.links; // link haee ro mide ke href daran
+        // !!! important .... bejaye index , id ham mishe gozasht !!!
+        document.body;
+        document.head;
+        document.title = 'java script';
+        document.images;
+        document.URL;
+        document.domain;
+        document.forms['id']['input name'];
+
+
+    </script>
+
+    <br>
+
+
+    <button onclick="alert('hello there')">click me !</button>
+    <button onclick="buttfunction()">button1</button>
+    <button id="helloBT">hello</button>
+    <button id="BT">doble click</button>
+    <p id="tap" onclick="tap(this)">tap on me !</p>
+
+    <select id="choose">
+        <option value="anime">anime</option>
+        <option value="manga">manga</option>
+        <option value="lightnovel">lightnovel</option>
+    </select>
+    <br><br>
+    <input id="focusblur" type="text" value="focus blur example">
+    <input type="submit" onclick="return false"> <!-- in az kar mindaze on submito -->
+
+    <script>
+        //UX !!!!!
+
+        function buttfunction(){
+            alert('hello agein !');
+        }
+        function DB(){
+            alert('this is dubble click');
+        }
+
+        document.getElementById('helloBT').onclick = buttfunction;
+        document.getElementById('BT').ondblclick = DB;
+
+        function tap(x){
+            x.innerHTML = 'thanks !';
+        }
+
+        document.getElementById('choose').onchange = function(){
+            document.getElementById('tap').innerHTML = document.getElementById('choose').value;
+        }
+
+        document.getElementById('focusblur').onfocus = function(){
+            document.getElementById('focusblur').style.backgroundColor = 'red';
+        }
+        document.getElementById('focusblur').onblur = function(){
+            document.getElementById('focusblur').style.backgroundColor = 'pink';
+        }
+        document.getElementById('focusblur').onkeyup = function(){
+            document.getElementById('tap').innerHTML = document.getElementById('focusblur').value;
+        }
+        // onmouseover ... onmouseout ... on ....
+
+    </script>
+
+    <br><br>
+
+    <button id="lsd">Listener</button>
+    <p id="pp">hello</p>
+    <script>
+
+        // ba addeventlistener mishe cnad function dad be ye chiz
+        document.getElementById('lsd').addEventListener('click',lssd);
+        document.getElementById('lsd').addEventListener('mouseover',ev,false); // bubbles = true
+        // on akhar ye true false migire ... ke true mige az bironi tarin element shoro kon ... va baraks
+        // remove eventlistener also exist
+        // for old IE : attachEvent , detachEvent
+        function lssd() {
+            document.getElementById('pp').innerText = 'wow !!!';
+        }
+
+        function ev(event) {
+            console.log(event); // in ye seri maghadiro to console mide ... e === event
+            //event.preventDefault(); // in mige mesle ghabl amal nakon ... hamoon return false
+        }
+
+        if (document.getElementById('lsd').addEventListener) {
+          // in mige age shart shenasaee shod ... true barmigardoone
+        }
+
+
+    </script>
+
+
+
+    <br><br>
+
+    <p id="timer"></p>
+    <script>
+
+      // time function also for animation :)
+
+      function welcome(){
+        document.getElementById('timer').innerText ='welcome to kiau!';
+      }
+
+      setTimeout(welcome, 4000);
+
+      var i = 0 ;
+      var timer = setInterval(function(){ // in mesle timer mimone tekrar mishe
+        i++;
+        document.getElementById('timer').innerText = i;
+        if(i == 3){
+          clearInterval(timer);
+        }
+      }, 1000)
+      
+    </script>
+
+    <br><br>
+
+    <div id="example1">
+        <h1>this is a title</h1>
+    </div>
+
+    <div>
+        <h2 id="head2">heading 2</h2>
+    </div>
+
+    <script>
+        // add a node to HTML 
+        
+        var p = document.createElement('p');
+        var text = document.createTextNode('this is from the other side'); //bache ro doros kon 
+        var example = document.getElementById('example1');
+
+        p.appendChild(text); // bache ro bede be parentesh 
+        example.appendChild(p);
+
+        /*also :::*/ p.textContent = 'this is form the other side of the other side :)';
+
+        var h2 = document.createElement('h2');
+        h2.innerText = 'new text before p tag';
+
+        example.insertBefore(h2,p); // in h2 ro ghable p mizare 
+
+        setTimeout(function() {
+            example.removeChild(h2); // in h2 ke sakhtimo hazf mikone 
+        },6000) ;
+
+        setTimeout(function() {
+            head2.parentNode.removeChild(head2); // remove mikone bedone id parent  
+        },6000) ;
+
+    </script>
+
+    <br><br>
+
+    <h2 id="windowdata"></h2>
+
+    <script>
+        var data = document.getElementById('windowdata');
+        data.innerHTML += 'inner width = ' + window.innerWidth + '<br><br>';
+        data.innerHTML += 'inner height = ' + window.innerHeight + '<br><br>';
+        data.innerHTML += 'screen X = ' + window.screenX + '<br><br>';
+        data.innerHTML += 'screen Y = ' + window.screenY + '<br><br>';
+        data.innerHTML += 'screen width = ' + window.screen.width + '<br><br>';
+        data.innerHTML += 'screen height = ' + window.screen.height + '<br><br>';
+ 
+        document.body.onclick = function() {
+            var window1 = window.open('http://www.amuzeshtak.com', '_blank', 'width=400,height=400,scrollbars=0,screenX=300,screenY=500')    
+            //screenX,Y == left o top 
+            setInterval(() => {
+                window1.close();
+                //window1.moveTo(X,Y);
+                //window1.resizeTo(X,Y);
+        }, 6000);
+        }
+
+    </script>
+
+    <br><br>
+
+    <p id="loco"></p>
+
+    <script>
+        var loco = document.getElementById('loco');
+
+        loco.innerHTML += window.location.href + '<br><br>';
+        loco.innerHTML += window.location.hostname + '<br><br>';
+        loco.innerHTML += window.location.port + '<br><br>';
+        loco.innerHTML += window.location.protocol + '<br><br>';
+        loco.innerHTML += window.location.pathname + '<br><br>';
+        window.reload(false); // age true bashe az cash nemikhone etelaato ... dobare az server migire 
+        //history.forward();  mire page badi 
+        //history.back();  mire page ghabli 
+        //window.location.assign('google.com') // mige mano montaghel kon be google
+        //window.location.replace('google.com') // mige mano montaghel kon be google
+        //window.location = 'google.com'  // also works fine 
+
+
+
+
+
+
+    </script>
+
+
+    <script>
+        //cookie 
+
+        var d = new Date();
+        d.setTime(d.getTime() + 10000);
+        var eee = d.toUTCString();
+        
+        document.cookie = "username=pouria;expires=Mon, 25 Nov 2020 17:15:33 GMT;path=/";
+        document.write(document.cookie);
+
+        // vase delet kardane cookie time ro ghable midi 
+        // ye time gozashte 
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
+
+
+</body>
+</html>
