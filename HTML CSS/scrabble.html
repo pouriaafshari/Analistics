@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrabble</title>
+
+
+    <style>
+        body
+        {
+            background-color: rgb(203, 255, 203);
+        }
+
+        table.scrabble
+        {
+            border-collapse: collapse;
+        }
+
+        table.scrabble td, table.scrabble th 
+        {
+            width: 3em;
+            height: 3em;
+
+            text-align: center;
+            vertical-align: middle;
+
+            text-transform: uppercase;
+        }
+
+        table.scrabble
+        {
+            font-size: normal;
+            font-family: sans-serif;
+        }
+
+        table.scrabble td
+        {
+            border: 1px solid green;
+            background-color: rgb(132, 224, 132);
+        }
+
+        table.scrabble td.tws
+        {
+            background-color: salmon;
+        }
+        table.scrabble td.tws::before
+        {
+            content: "triple word";
+            font-size: 60%;
+        }
+
+        table.scrabble td.dws
+        {
+            background-color: rgb(255, 178, 178);
+        }
+        table.scrabble td.dws::before
+        {
+            content: "double word";
+            font-size: 60%;
+        }
+        table.scrabble td.dws.middle::before
+        {
+            content: "\2605";
+            font-size: 2em;
+        }
+    </style>
+
+
+</head>
+<body>
+    <table class="scrabble">
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>a</th>
+                <td class="tws"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="tws"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="tws"></td>
+                <th>a</th>
+            </tr>
+            <tr>
+                <th>b</th>
+                <td></td>
+                <td class="dws"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="dws"></td>
+                <td></td>
+                <th>b</th>
+            </tr>
+            <tr>
+                <th>c</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>c</th>
+            </tr>
+            <tr>
+                <th>d</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>d</th>
+            </tr>
+            <tr>
+                <th>e</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>e</th>
+            </tr>
+            <tr>
+                <th>f</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>f</th>
+            </tr>
+            <tr>
+                <th>g</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>g</th>
+            </tr>
+            <tr>
+                <th>h</th>
+                <td class="tws"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="dws middle"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="tws"></td>
+                <th>h</th>
+            </tr>
+            <tr>
+                <th>i</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>i</th>
+            </tr>
+            <tr>
+                <th>j</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>j</th>
+            </tr>
+            <tr>
+                <th>k</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>k</th>
+            </tr>
+            <tr>
+                <th>l</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>l</th>
+            </tr>
+            <tr>
+                <th>m</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>m</th>
+            </tr>
+            <tr>
+                <th>n</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>n</th>
+            </tr>
+            <tr>
+                <th>o</th>
+                <td class="tws"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="tws"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="tws"></td>
+                <th>o</th>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

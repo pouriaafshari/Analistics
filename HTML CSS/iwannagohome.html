@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source code in HTML</title>
+
+    <style>
+        body{
+            background-color: rgb(215, 255, 215);
+        }
+        pre
+        {
+            padding: 0.5em;
+            background-color: rgb(165, 231, 165);
+            counter-reset: line-number;
+        }
+        pre >span::before
+        {
+            content: counter(line-number);
+            counter-increment: line-number;
+
+            display: inline-block;
+            width: 2em;
+            text-align: right;
+
+            border-right: 1px green solid;
+            padding-right: 0.25em;
+            margin-right: 0.25em;
+        }
+
+    </style>
+
+</head>
+<body>
+<pre>
+<span>&lt;!DOCTYPE html&gt;</span>
+<span>&lt;html lang=&quot;en&quot;&gt;</span>
+<span>&lt;head&gt;</span>
+<span>    &lt;title&gt;Hello, World!&lt;/title&gt;</span>
+<span>&lt;/head&gt;</span>
+<span>&lt;body&gt;</span>
+<span>    &lt;p&gt;Hello, World!&lt;/p&gt;</span>
+<span>&lt;/body&gt;</span>
+</pre>
+</body>
+</html>
