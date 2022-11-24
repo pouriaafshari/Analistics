@@ -1,0 +1,110 @@
+/*'Write a block with a function declaration. The function takes a customer name as parameter and returns how many order have been placed by the customer. 
+Call the function inside the block with customer names;*/
+declare
+function show_orders
+(firstname oe.customers.cust_first_name%type,
+lastname oe.customers.cust_last_name%type) 
+return number is
+  val number(5);
+begin
+  select count(*)
+  into val
+  from (oe.customers oc right outer join oe.orders oo
+  on oc.customer_id = oo.customer_id)
+  where oc.cust_first_name=firstname
+  and oc.cust_last_name=lastname;
+  
+  return val;
+end;
+
+
+begin
+ dbms_output.put_line(show_orders('Sivaji', 'Landis'));
+end;
+
+
+
+*******************************************
+
+302,'Write a stored procedure which takes a customer name as parameter and returns (out parameter) the customer''s birth date and gender. (No need to handle exceptions here.)';
+
+
+
+
+create or replace procedure Bday_gender
+(firstname oe.customers.cust_first_name%type,
+lastname oe.customers.cust_last_name%type,
+
+outval1 out oe.customers.date_of_birth%type,
+outval2 out oe.customers.gender%type) 
+is begin
+
+select date_of_birth, gender
+into outval1, outval2
+from oe.customers oc
+where oc.cust_first_name=firstname
+and oc.cust_last_name=lastname;
+  
+end;
+/
+
+declare
+outval1 oe.customers.date_of_birth%type;
+outval2 oe.customers.gender%type;
+begin
+    Bday_gender('Sivaji', 'Landis', outval1, outval2);
+     dbms_output.put_line(outval1|| '  ' ||outval2);
+end;
+
+
+
+************************************************
+
+
+303,'Write a block, that calls the previously defined procedure. Call it in a way that it will raise exception. Examine the results. Extend the block to handle exceptions caused by the select into statement and prints the error.';
+
+
+
+
+
+
+create or replace procedure Bday_gender
+(firstname oe.customers.cust_first_name%type,
+outval1 out oe.customers.date_of_birth%type,
+outval2 out oe.customers.gender%type) 
+is begin
+
+select date_of_birth, gender
+into outval1, outval2
+from oe.customers oc
+where oc.cust_first_name=firstname;
+  
+end;
+/
+
+declare
+outval1 oe.customers.date_of_birth%type;
+outval2 oe.customers.gender%type;
+begin
+    Bday_gender('Sivaji', outval1, outval2);
+     dbms_output.put_line(outval1|| '  ' ||outval2);
+     
+exception
+    when too_many_rows
+    then dbms_output.put_line('Too Many Rows !!!');
+end;
+
+
+*************************************************************
+
+
+
+304,'Create a table named familymembers with two attributes: customer table id (foreign key), familymember name. The primary key is the two attribute combined.';
+
+
+
+
+
+
+
+
