@@ -1,0 +1,66 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+
+    background-color: rgb(255, 239, 241);
+}
+
+#grid
+{
+    margin: auto;
+    display: grid;
+    width: 50vh;
+    height: 40vh;
+    border-radius: 5px;
+
+    grid-template-rows: 30%;
+    grid-template-columns: 50%;
+    grid-template-areas:
+        "head head"
+        "nav  main"
+        "nav  foot";
+}
+
+#Header
+{
+    grid-area: head;
+    background-color: rgb(255, 228, 233);
+}
+#Navigation
+{
+    grid-area: nav;
+    background-color: rgb(255, 219, 225);
+}
+#Main
+{
+    grid-area: main;
+    background-color: rgb(255, 202, 211);
+}
+#Footer
+{
+    grid-area: foot;
+    background-color: pink;
+}
+
+#grid div
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 1px;
+}
+#grid div::before
+{
+    content: attr(id);
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgb(207, 207, 207);
+    font-family: monospace;
+    font-size: large;
+}
